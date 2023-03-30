@@ -2,9 +2,9 @@ const { Pool } = require('pg');
 
 const db =  require('../db.js')
 
-const table = "usuarios"
+const table = "menus"
 
-class User {
+class Menus {
   static async findAll() {
     const { rows } = await db.query(`SELECT * FROM ${table}`);
     return rows;
@@ -41,4 +41,4 @@ class User {
   }
 }
 
-module.exports = User;
+module.exports = Menus;

@@ -5,11 +5,13 @@ const routes = require('./src/routes/index');
 
 const app = express();
 const PORT = 3000;
+const cors = require('cors');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+app.use(cors());
 app.use('/api', routes);
+
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
